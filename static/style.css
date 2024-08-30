@@ -1,0 +1,179 @@
+/* Base styles */
+:root {
+    --main-color:rgb(252,251,253); 
+    --secondary-color: #1E1E1E; 
+    --bg-color:rgb(23,33,68);
+    --darkbg-color: rgb(16,23,39);
+    --accent-color: #EAEAEA; 
+    --gradient-color: linear-gradient(45deg,rgb(35,20,115), rgb(211,14,146));
+    --extra-color: rgb(26,205,208);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--darkbg-color); 
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container-fluid {
+    padding: 0;
+}
+
+.container {
+    width: 80%; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 30px;
+    background: var(--bg-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--main-color);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Description styling */
+.description {
+    font-size: 1rem;
+    color: var(--main-color);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    background: var(--gradient-color);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form container styles */
+.form-container {
+    background: var(--darkbg-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+.form-label {
+    font-weight: 600;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.form-control, .form-select {
+    background: var(--darkbg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px;
+    color: var(--main-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 8px var(--main-color);
+    outline: none;
+}
+
+/* Button styles */
+.btn-primary {
+    border: none;
+    background: var(--gradient-color);
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--main-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background: var(--extra-color);
+    transform: translateY(-2px);
+    color: var(--darkbg-color);
+}
+
+/* Chart Container */
+.chart-container {
+    background: var(--darkbg-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+/* Chart background */
+canvas {
+    background: var(--bg-color);
+
+    border-radius: 8px;
+}
+
+/* Dropdown menu styling */
+.form-select {
+    color: var(--main-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.form-select:hover, .form-select:focus {
+    border-color: var(--bg-color);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+/* Chart text styling */
+#chart {
+    font-family: 'Roboto', sans-serif;
+}
+
+.chartjs-render-monitor {
+    color: var(--bg-color);
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+    }
+
+    .form-control, .form-select {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .col-md-4, .col-md-8 {
+        width: 100%; 
+        margin-bottom: 20px;
+    }
+}

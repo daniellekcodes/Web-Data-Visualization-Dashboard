@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for social sharing -->
+    <meta property="og:title" content="Data Visualization Dashboard">
+    <meta property="og:description" content="Upload your CSV files and visualize the data with dynamic charts.">
+    <meta property="og:url" content="www.example.com">
+    <meta property="og:image" content="www.example.com/main-image">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- External JavaScript libraries -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+
+
+    <!-- Main section -->
+    <div class="container-fluid mt-4">
+        <div class="container">
+            <h1 class="text-center">Data Visualization Dashboard</h1>
+
+            <!-- Descriptionbox section -->
+            <p class="text-center description">
+                Upload your CSV file and generate various types of charts (bar, line, pie)
+                directly in your browser.
+            </p>
+
+            <div class="row">
+                <!-- Form section -->
+                <div class="col-md-4">
+                    <div class="form-container">
+                        <div class="mb-3">
+                            <label for="fileUpload" class="form-label">Upload CSV File:</label>
+                            <input type="file" id="fileUpload" class="form-control" accept=".csv">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="chartType" class="form-label">Select Chart Type:</label>
+                            <select id="chartType" class="form-select">
+                                <option value="bar">Bar Chart</option>
+                                <option value="line">Line Chart</option>
+                                <option value="pie">Pie Chart</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="xAxis" class="form-label">Select X-Axis Column:</label>
+                            <select id="xAxis" class="form-select">
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="yAxis" class="form-label">Select Y-Axis Column:</label>
+                            <select id="yAxis" class="form-select">
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary mb-3" id="generateChart">Generate Chart</button>
+                    </div>
+                </div>
+
+                <!-- Chart section -->
+                <div class="col-md-8">
+                    <div class="chart-container">
+                        <canvas id="chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JS files -->
+    <script src="static/app.js"></script>
+</body>
+
+</html>
